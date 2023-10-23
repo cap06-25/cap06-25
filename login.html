@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This example demonstrates how we can change text content when clicking on button</h1>
+  <hr>
+  <h1 id="display">Click on Login to continue</h1>
+  <button id="abc" onClick="login()">Login</button>
+  <button id="abcd" onclick="logout()">Logout</button>
+</body>
+<script>
+     function login() {
+    let message = document.getElementById("abc")
+    message.innerText = "login sucessfull"
+  }
+
+  function logout() {
+    let message = document.getElementById("abcd")
+    message.innerText = "logout sucessfull"
+    
+  }
+</script>
+</html>
