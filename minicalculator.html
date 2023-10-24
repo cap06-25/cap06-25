@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="f1" type="number" value="first number">
+    <input id="f2" type="number" value="second number">
+    <hr>
+    <button onclick="add()">add</button>
+    <button onclick="sub()">subtract</button>
+    <button onclick="multiply()">multiply</button>
+    <button onclick="div()">devide</button>
+</body>
+<script>
+    let ip1=document.getElementById("f1");
+    let ip2=document.getElementById("f2");
+    function add(ip1,ip2){
+     sum = ip1+ip2;
+     console.log(sum)
+    }
+    function sub(ip1,ip2){
+     diff=ip1-ip2;
+     console.log(diff)
+    }
+    function multiply(ip1,ip2){
+     product = ip1*ip2;
+     console.log(product)
+
+    }
+    function div(ip1,ip2){
+     divison = ip1/ip2;
+     console.log(division)
+    }
+</script>
+</html>
