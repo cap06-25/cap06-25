@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #parent{
+        display: grid;
+        width: 30%;
+        height: auto;
+        /* border: 2px solid goldenrod; */
+        /* grid-template-columns: 400px; */
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        margin: auto;
+        gap: 20px;
+        justify-content: space-around;
+        padding-bottom: 20px;
+    
+        
+    }
+    .cell{
+        width: auto;
+        height: auto;
+        /* border: 2px solid green; */
+        padding: 30px;
+        margin: auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+        justify-content: space-around;
+        border-radius: 20px;
+        
+    }
+    .opt{
+        width: auto;
+        height: auto;
+        /* border: 2px solid green; */
+        padding: 30px;
+        margin: auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+        justify-content: space-around;
+        border-radius: 20px;
+        
+    }
+    .ans{
+        width: auto;
+        height: auto;
+        /* border: 2px solid green; */
+        padding: 30px;
+        margin: auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+        justify-content: space-around;
+        border-radius: 20px;
+        
+    }
+    h1{
+        color: blue;
+        font-size: 50px;
+        text-align: center;
+    }
+    #result{
+        width :60%;
+          height: 50px; 
+         /* border: 2px solid red; */
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+         background-color: aquamarine; 
+         justify-content: center;
+         margin: auto;
+         border-radius: 15px;
+         margin-bottom: 15px;
+        
+    }
+    #main{
+        width: 40%;
+        height: auto;
+        margin: auto;
+        justify-content: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+        flex-wrap: wrap;
+    }
+    
+        </style>
+<body>
+    <body>
+        <h1>Masai Calulator</h1>
+        <br><br><br>
+        <div id="main">
+        <div id="result"></div> 
+        <div id="parent">      
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell">3</div>
+            <div class="opt" style="background-color: black; color: aliceblue;">+</div>
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+            <div class="opt" style="background-color: black; color: aliceblue;">-</div>
+            <div class="cell">7</div>
+            <div class="cell">8</div>
+            <div class="cell">9</div>
+            <div class="opt" style="background-color: black; color: aliceblue;">*</div>
+            <div class="opt" style="background-color: red;">c</div>
+            <div class="cell">0</div>
+            <div class="ans" style="background-color: black; color: aliceblue;">=</div>
+            <div class="opt" style="background-color: black; color: aliceblue;">/</div>
+        </div></div>
+    
+    </body>
+</body>
+<script>
+let button = document.querySelectorAll('#parent > .cell');
+let operator = document.querySelectorAll('#parent > .opt');
+let answer = document.querySelectorAll('#parent > .ans');
+let result = document.getElementById("result");
+isfirstnum = true;
+let num1="";
+let num2="";
+let opt="";
+answer.addEventListener('click',function()
+{
+result.innerText = calculate(num1,num2,opt);
+})
+for(i=0;i<button.length;i++){
+    button[i].addEventListener('click',function()
+    {
+        if(isFirstnum==true){
+            num1 += button[i].innerText;
+            answer.innerText = num1;
+        }
+        else{
+            num2 += button[i].innerText;
+            answer.innerText = num2;
+        }
+    })
+}
+for(i=0;operator.length;i++)
+{
+    operator[i].addEventListener('click',function()
+    {
+        isfirstnum = false;
+    })
+}
+function calculate(num1,num2,opt)
+{
+    switch (opt)
+       {case "+" :
+        return Number(num1) + Number(num2);
+        case "-" :
+        return Number(num1) - Number(num2);
+        case "*" :
+        return Number(num1) * Number(num2);
+        case "/" :
+        return Number(num1) / Number(num2);
+}
+}
+</script>
+</html>
