@@ -109,10 +109,12 @@
     </body>
 </body>
 <script>
-let button = document.querySelectorAll('#parent > .cell');
-let operator = document.querySelectorAll('#parent > .opt');
-let answer = document.querySelectorAll('#parent > .ans');
-let result = document.getElementById("result");
+let boss = document.querySelector('#main')   
+let monitor = boss.querySelector('#parent');
+let button = monitor.querySelectorAll('.cell');
+let operator = monitor.querySelectorAll('.opt');
+let answer = monitor.querySelectorAll('.ans');
+let result = boss.getElementById("result");
 isfirstnum = true;
 let num1="";
 let num2="";
@@ -139,6 +141,7 @@ for(i=0;operator.length;i++)
     operator[i].addEventListener('click',function()
     {
         isfirstnum = false;
+        opt = operator[i].innerText;
     })
 }
 function calculate(num1,num2,opt)
