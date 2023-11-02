@@ -4,12 +4,15 @@ let priority = document.getElementById('priority');
 let tbody = document.querySelector('tbody');
 let alldata = [];
 myform.addEventListener('submit',function(abc)
+
 {
+    abc.preventDefault();
     let data = {};
     data.input1 = inptask.value;
     data.input2 = priority.value;
     alldata.push(data);
     tbody.innerHTML = null;
+    // tbody.preventDefault();
     alldata.map((element) =>
     {
         let row = document.createElement('tr');
