@@ -14,9 +14,31 @@
         this.withdraw=withdraw;
         this.balance=balance=balance;
         this.isActive=isActive;
+
+        this.deposited=function(amount){
+            this.balance += amount;
+        }
+        this.debited=function(amount){
+            if(this.balance<=amount){
+                this.balance -= amount;
+                console.log("transection sucess",amount);
+            }
+            else{
+                console.log("insufficient balance", balance);
+            }
+        }
+        this.total = function(){
+            console.log("total balance is ", this.balance);
+        }
     }
+    
     let p1 = new Createbankaccount(4653335,256522,4466458,true);
     let p2 = new Createbankaccount(5653335,386522,5666458,true);
+    console.log(p1);
+    p1.deposited(25585565);
+    p1.debited(2233234);
+    console.log(p1);
+    p1.total();
     console.log(p1);
 </script>
 </html>
