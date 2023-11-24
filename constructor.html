@@ -40,5 +40,15 @@
     console.log(p1);
     p1.total();
     console.log(p1);
+    console.log(p2);
+    let accounts = [p1,p2];
+    function totalbalance(accounts){
+    let total = 0;
+    for(i=0;i<accounts.length;i++){
+        total += accounts[i].balance;
+    }
+    console.log(total);
+    }
+    totalbalance(accounts);
 </script>
 </html>
